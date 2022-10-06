@@ -18,7 +18,9 @@
  * ? example: testString('abc', /def/) // false
  */
 function testString(str, re) {
-  // write your code here & return value
+  const regex = new RegExp(re);
+  const result = regex.test(str);
+  return result;
 }
 
 /**
@@ -32,10 +34,13 @@ function testString(str, re) {
  * ? must create a regular expression using the constructor function new RegExp()
  * ? https://mzl.la/3lWGpRa
  * ? hint: create a string with the join array method and the | character as the separator
- * ? The '|' character acts like the OR operator 
+ * ? The '|' character acts like the OR operator
  */
 function testStringOr(str, arr) {
-  // write your code here & return value
+  const checkString = arr.join('|');
+  const regex = new RegExp(checkString);
+  const result = regex.test(str);
+  return result;
 }
 
 /**
@@ -49,7 +54,9 @@ function testStringOr(str, arr) {
  * ? must create a regular expression using the constructor function new RegExp()
  */
 function testStringIgnoreCase(str, match) {
-  // write your code here & return value
+  const regex = new RegExp((match), 'i');
+  const result = regex.test(str);
+  return result;
 }
 
 /**
@@ -62,7 +69,10 @@ function testStringIgnoreCase(str, match) {
  * ? example: countVowels('the boy is lost in the woods, HELP US!') => 10
  */
 function countVowels(str) {
-  // write your code here & return value
+  const regex = /[aeiou]/gi;
+  const arr = str.match(regex);
+  const result = arr.length;
+  return result;
 }
 
 /**
@@ -76,7 +86,9 @@ function countVowels(str) {
  * ? must use the replace() string method - https://mzl.la/2Zsw4F6
  */
 function replaceVowels(str, ch) {
-  // write your code here & return value
+  const regex = /[aeiou]+/gi;
+  const newthing = str.replace(regex, ch);
+  return newthing;
 }
 
 /**
@@ -89,7 +101,12 @@ function replaceVowels(str, ch) {
  * ? must create a regular expression using the constructor function new RegExp()
  */
 function isPrefix(str, prefix) {
-  // write your code here & return value
+  const regex = new RegExp(prefix);
+  const thingone = str.split(',');
+  const sliced = thingone.slice(0, 1);
+  const slicestring = sliced.toString();
+  const result = regex.test(slicestring);
+  return result;
 }
 
 module.exports = {

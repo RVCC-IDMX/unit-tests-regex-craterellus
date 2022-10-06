@@ -36,14 +36,14 @@ test('testStringIgnoreCase', () => {
 
 test('countVowels', () => {
   expect(countVowels('Hello, World!')).toBe(3);
-  const sampleStr = `It matters not what someone is born, but what they grow to be.`;
+  const sampleStr = 'It matters not what someone is born, but what they grow to be.';
   expect(countVowels(sampleStr)).toBe(17);
 });
 
 test('replaceVowels', () => {
   expect(replaceVowels('Hello, World!', '*')).toBe('H*ll*, W*rld!');
   expect(replaceVowels('Loop the street please', '#')).toBe(
-    'L#p th# str#t pl#s#'
+    'L#p th# str#t pl#s#',
   );
 });
 
